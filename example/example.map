@@ -81,9 +81,6 @@ MAP
       "ows_keywordlist"                "example,unknown"
 
       "wfs_extent"                     "2 50 9 54"
-      "wfs_namespace_prefix"           "example"
-      "wfs_namespace_uri"              "http://example.unknown.org"
-      "wfs_getfeature_formatlist"      "GEOJSON,JSON,XML,GML3"
       "wfs_maxfeatures"                "1000"
 
       "wms_getmap_formatlist"          "image/svg+xml,image/png,image/jpeg,image/png; mode=8bit,image/vnd.jpeg-png,image/vnd.jpeg-png8"
@@ -96,7 +93,60 @@ MAP
   END
 
   LAYER
-    NAME "example"
+    NAME "example222"
+    STATUS ON
+    TYPE POLYGON
+
+    METADATA
+      "wfs_title"               "example"
+      "wfs_abstract"            "Layer containing the example data"
+      "wfs_srs"                 "EPSG:4326 EPSG:4258"      
+      "wfs_extent"              "2 50 9 54"      
+      "wfs_bbox_extended"       "true"
+      "wfs_enable_request"      "*"
+
+      "wfs_include_items"       "all"
+      "gml_include_items"       "all"
+      "gml_featureid"           "msfid"
+      "gml_exclude_items"       "msfid" 
+      "gml_geometries"          "geometry"
+    
+      "wms_title"               "example"
+
+      "gml_geometries"          "geom"
+      "wms_featureid"           "msfid" 
+      "wms_extent"              "2 50 9 54"    
+      "wms_abstract"            "Layer containing the example data"
+      "wms_keywordlist"         "example,unknown"
+
+      "wms_include_items"        "all" 
+      "wms_exclude_items"        "msfid"
+    END
+
+    CLASSGROUP "example:style"
+    CLASS
+      NAME "example"
+      GROUP "example:style"
+      STYLE
+        COLOR 230 230 0
+      END
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END    
+
+    CONNECTIONTYPE OGR
+    CONNECTION "polygons222.geojson"
+    DATA "select fid as msfid, * from polygons222"
+    
+    DUMP TRUE
+    TEMPLATE /srv/data/example.html
+
+  END # LAYER
+
+  LAYER
+    NAME "example111"
     STATUS ON
     TYPE POLYGON
 

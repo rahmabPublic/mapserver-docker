@@ -56,7 +56,7 @@ RUN apt-get -y update && \
 
 RUN apt-get -y update --fix-missing
 
-RUN git clone --single-branch -b pdok-7-4-patch-1 https://github.com/pdok/mapserver/ /usr/local/src/mapserver
+RUN git clone --single-branch -b pdok-7-4-patch-1 https://github.com/rahmabPublic/mapserver/ /usr/local/src/mapserver
 
 RUN mkdir /usr/local/src/mapserver/build && \
     cd /usr/local/src/mapserver/build && \
@@ -147,7 +147,7 @@ COPY etc/lighttpd.conf /lighttpd.conf
 RUN chmod o+x /usr/local/bin/mapserv
 RUN apt-get clean
 
-ENV DEBUG 0
+ENV DEBUG 5
 ENV MIN_PROCS 1
 ENV MAX_PROCS 3
 ENV MAX_LOAD_PER_PROC 4

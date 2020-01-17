@@ -16,25 +16,8 @@ MAP
     METADATA
       "ows_enable_request"               "*"
       "ows_fees"                         "NONE"
-      "ows_contactorganization"          "Unknown"
       "ows_schemas_location"             "http://schemas.opengis.net"
-      "ows_service_onlineresource"       "http://localhost"
-      "ows_contactperson"                "ContactCenter Unknown"
-      "ows_contactposition"              "pointOfContact"
-      "ows_contactvoicetelephone"        ""
-      "ows_contactfacsimiletelephone"    ""
-      "ows_addresstype"                  ""
-      "ows_address"                      ""
-      "ows_city"                         "City"
-      "ows_stateorprovince"              ""
-      "ows_postcode"                     ""
-      "ows_country"                      "Country"
-      "ows_contactelectronicmailaddress" "example@unknown.org"
-      "ows_hoursofservice"               ""
-      "ows_contactinstructions"          ""
-      "ows_role"                         ""
-      "ows_srs"                          "EPSG:4326 EPSG:3857 EPSG:4258 CRS:84"
-      "ows_accessconstraints"            "otherRestrictions;http://creativecommons.org/publicdomain/mark/1.0"      
+      "ows_service_onlineresource"       "http://localhost"  
     END
   END
 
@@ -48,27 +31,9 @@ MAP
   END
 
   OUTPUTFORMAT
-    NAME "JSON"
-    DRIVER "OGR/GEOJSON"
-    MIMETYPE "application/json"
-    FORMATOPTION "STORAGE=stream"
-    FORMATOPTION "FORM=SIMPLE"
-    FORMATOPTION "USE_FEATUREID=true"    
-  END
-
-  OUTPUTFORMAT
     NAME "XML"
     DRIVER "OGR/GML"
     MIMETYPE "text/xml"
-    FORMATOPTION "STORAGE=stream"
-    FORMATOPTION "FORM=SIMPLE"
-    FORMATOPTION "USE_FEATUREID=true"    
-  END
-
-  OUTPUTFORMAT
-    NAME "GML3"
-    DRIVER "OGR/GML"
-    MIMETYPE "text/xml; subtype=gml/3.1.1"
     FORMATOPTION "STORAGE=stream"
     FORMATOPTION "FORM=SIMPLE"
     FORMATOPTION "USE_FEATUREID=true"    
@@ -79,10 +44,6 @@ MAP
       "ows_title"                      "Example"
       "ows_abstract"                   "Service containing a example"
       "ows_keywordlist"                "example,unknown"
-
-      "wfs_extent"                     "2 50 9 54"
-      "wfs_maxfeatures"                "1000"
-
       "wms_getmap_formatlist"          "image/svg+xml,image/png,image/jpeg,image/png; mode=8bit,image/vnd.jpeg-png,image/vnd.jpeg-png8"
       "wms_enable_request"             "* !GetStyles"         
       "wms_bbox_extended"              "true" 
@@ -98,27 +59,12 @@ MAP
     TYPE POLYGON
 
     METADATA
-      "wfs_title"               "example"
-      "wfs_abstract"            "Layer containing the example data"
-      "wfs_srs"                 "EPSG:4326 EPSG:4258"      
-      "wfs_extent"              "2 50 9 54"      
-      "wfs_bbox_extended"       "true"
-      "wfs_enable_request"      "*"
-
-      "wfs_include_items"       "all"
-      "gml_include_items"       "all"
-      "gml_featureid"           "msfid"
-      "gml_exclude_items"       "msfid" 
-      "gml_geometries"          "geometry"
-    
       "wms_title"               "example"
-
       "gml_geometries"          "geom"
       "wms_featureid"           "msfid" 
       "wms_extent"              "2 50 9 54"    
       "wms_abstract"            "Layer containing the example data"
       "wms_keywordlist"         "example,unknown"
-
       "wms_include_items"        "all" 
       "wms_exclude_items"        "msfid"
     END
@@ -151,28 +97,13 @@ MAP
     TYPE POLYGON
 
     METADATA
-      "wfs_title"               "example"
-      "wfs_abstract"            "Layer containing the example data"
-      "wfs_srs"                 "EPSG:4326 EPSG:4258"      
-      "wfs_extent"              "2 50 9 54"      
-      "wfs_bbox_extended"       "true"
-      "wfs_enable_request"      "*"
-
-      "wfs_include_items"       "all"
-      "gml_include_items"       "all"
-      "gml_featureid"           "msfid"
-      "gml_exclude_items"       "msfid" 
-      "gml_geometries"          "geometry"
-    
       "wms_title"               "example"
-
       "gml_geometries"          "geom"
       "wms_featureid"           "msfid" 
       "wms_extent"              "2 50 9 54"    
       "wms_abstract"            "Layer containing the example data"
       "wms_keywordlist"         "example,unknown"
-
-      "wms_include_items"        "all" 
+      "wms_include_items"        "all"
       "wms_exclude_items"        "msfid"
     END
 
